@@ -5,17 +5,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
         <title>
-            Est's Homepage
+            Est's Aboutpage
         </title>
         <link href="./main.css" rel="stylesheet" media="all">
         <script src="./common-min.js">
         </script>
     </head>
 
-    <body>
+    <body class="is-loading">
         <canvas id="sakura"></canvas>
 
-        <div class="container">
+        <div class="container" id="main">
             <div class="img">
                 <div class="description">
                         Coder & ACGer
@@ -30,8 +30,8 @@
                 </ul>
                 Timeline
                 <ul>
-                    <li>Currently &nbsp;&nbsp;&nbsp;&nbsp;Android Developer @ ZTgame, Shanghai</li>
-                    <li>2011-2015 &nbsp;Student @ DHU ,Shanghai</li>
+                    <li>Currently &nbsp;&nbsp;&nbsp;&nbsp;Android Developer @ ZTGame, Shanghai</li>
+                    <li>2011-2015 &nbsp;Student @ DHU, Shanghai</li>
                 </ul>
                 Links
                 <ul>
@@ -47,7 +47,12 @@
             </div>
         </div>
 
-
+<script>
+    if ('addEventListener' in window) {
+        window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+    }
+</script>
 <!-- sakura shader -->
 <script id="sakura_point_vsh" type="x-shader/x_vertex">
 uniform mat4 uProjection;
